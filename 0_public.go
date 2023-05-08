@@ -15,7 +15,10 @@ func SubAfter(source string, target string) (result string) {
 	if index == -1 {
 		return
 	}
-	return source[index+1:]
+	if index+len(target) >= len(source) {
+		return
+	}
+	return source[index+len(target):]
 }
 
 func SubBeforeLast(source string, target string) (result string) {
@@ -31,5 +34,8 @@ func SubAfterLast(source string, target string) (result string) {
 	if index == -1 {
 		return
 	}
-	return source[index+1:]
+	if index+len(target) >= len(source) {
+		return
+	}
+	return source[index+len(target):]
 }
